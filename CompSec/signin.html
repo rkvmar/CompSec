@@ -8,7 +8,15 @@
         body {background-color: #f0f4f9;}
         input {width: 90%; height: 40px; text-align: center; border: 1px solid black; border-radius: 10px; margin: 5px; font-size: 2vh;}
         p {font-family: "Roboto", sans-serif; font-weight: 400; font-style: normal; font-size: 4vh;}
+        button {margin: 5px; height: 40px; width:200px; color: #FFFFFF; background-color: #4d90cf; border: none; border-radius: 20px; font-size: 15px;}
+        button:hover {filter: drop-shadow(0 0 1rem #00ff04);}
         #box {width: 45%; margin: auto; text-align: center; filter: drop-shadow(0 0 0.75rem #75acde); border-radius: 6px; margin-top: 10%; background-color: #ffffff;}
+        #arrow1 {position: absolute; left: 50%; top: 83%; rotate: 180deg;}
+        #arrow2 {position: absolute; left: 38%; top: 76%; rotate: 255deg;}
+        #arrow3 {position: absolute; left: 58%; top: 70%; rotate: 50deg;}
+        .arrow {opacity: 0; transition-duration: 0.5s; filter: drop-shadow(0 0 1rem #ff0000);}
+        body:has(button:hover) > .arrow {opacity: 100%; }
+
     </style>
 </head>
 <body>
@@ -19,6 +27,11 @@
         <br>
         <input type="password" placeholder="Password" class="pass">
         <br>
+        <button>Sign In →</button>
+        <br>
     </div>
+    <img class="arrow" id="arrow1" src="arrow.png" height="50px">
+    <img class="arrow" id="arrow2" src="arrow.png" height="50px">
+    <img class="arrow" id="arrow3" src="arrow.png" height="50px">
 </body>
 </html>
