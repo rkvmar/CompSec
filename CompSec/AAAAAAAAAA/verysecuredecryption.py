@@ -14,14 +14,11 @@ x=0
 pos = word.split('A',1)[0]
 pos = pos.replace('À','0')
 pos = pos.replace('Á','1')
-# print(pos)
 security = word.split('A',1)[1]
 
 for letter, diffa in {'0':'À','1':'Á','2':'Â','3':'Ã','4':'Ä','5':'Å','6':'Ā','7':'Ă','8':'Ą','9':'Ǎ','a':'Ǟ','b':'Ǡ','c':'Ȁ','d':'Ȃ','e':'Ȧ','f':'Ḁ','x':'Ấ'}.items():
     security = security.replace(diffa, letter)
-# print(security)
 security2 = hex_to_string(security)
-# print(security2)
 for i in security2 :
     security3 = ''.join((security3,chr(ord(i) - ord(key[x+int(pos,2)]))))
     x=x+1
