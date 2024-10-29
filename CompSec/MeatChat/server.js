@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
-let messages = []; // Change to an array
+let messages = [];
 let messageIdCounter = 0;
 
 let userdata = {
@@ -94,7 +93,6 @@ app.post('/data', (req, res) => {
 
         messages.push(messageObject);
 
-        // Respond back to the client with the entire messages array
         res.json(messages);
     } else {
         res.status(403).json({ message: 'error', status: 'error' });
@@ -143,7 +141,11 @@ app.get('/banned', (req, res) => {
 });
 
 app.post('/crash', (req, res) => {
-    console.log(req.body);
-    res.json({ message: 'Server shutting down', status: 'success' });
-    process.exit(0);
+    if(userdata[req.body.user] && userdata[req.body.user].canManageServer && userdata[req.body.user].key == req.body.auth){
+        console.log(req.body);
+        res.json({ message: 'Server shutting down', status: 'success' });
+        process.exit(0);
+    } else {
+        res.status(403).json({ message: 'error', status: 'error' });
+    }
 });
