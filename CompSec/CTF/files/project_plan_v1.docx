@@ -1,0 +1,14 @@
+// This document outlines the project plan for goggle incorporated.
+// It includes objectives, timelines, and responsibilities for team members.
+
+// Objectives:
+// 1. Develop a secure file sharing system (our current system is not very secure)
+// 2. Implement user authentication and authorization
+// 3. Ensure data integrity and confidentiality (VERY IMPORTANT)
+
+// Timeline:
+// - Week 1: Requirements gathering and analysis.
+// - Week 2: Design system architecture.
+// - Week 3-4: Development phase.
+// - Week 5: Testing and debugging.
+// - Week 6: Deployment and review.

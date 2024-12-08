@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./goggle.svg" alt="Goggle logo">
+        </div>
+        <div id="auth">
+            <h1>Welcome to the Goggle files directory!</h1>
+            <h2>If you have managed to get here without working at Goggle, kindly press the button below.</h2>
+            <button id="notadmin" onclick="window.location.href = '/'">Go back</button>
+            <h2>If you are supposed to be here, please push the <span style="cursor: pointer;" onmouseover="document.getElementById('adminButton').style.display='block'">inconspicuous</span> button</h2>
+            <br>
+            <img id="adminButton" src="./inconspicuous.jpg" onclick="showFiles()" onmouseover="document.getElementById('adminButton').src='./conspicuous.jpg'" onmouseout="document.getElementById('adminButton').src='./inconspicuous.jpg'">
+        </div>
+        <div id="files">
+            <h1>Goggle Files Directory</h1>
+            <div id="fileList"></div>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

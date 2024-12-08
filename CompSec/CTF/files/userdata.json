@@ -1,0 +1,72 @@
+{
+    "ilovemelonmusk123": {
+        "username": "ilovemelonmusk123",
+        "password": "password123",
+        "role": "user"
+    },
+    "coolguy99": {
+        "username": "coolguy99",
+        "password": "123456",
+        "role": "user"
+    },
+    "happycat80": {
+        "username": "happycat80",
+        "password": "qwerty",
+        "role": "user"
+    },
+    "john_doe": {
+        "username": "john_doe",
+        "password": "letmein",
+        "role": "user"
+    },
+    "sillygoose": {
+        "username": "sillygoose",
+        "password": "password",
+        "role": "user"
+    },
+    "inconspicuous_user": {
+        "username": "inconspicuous_user",
+        "password": "password1",
+        "role": "user"
+    },
+    "ilikesharks3": {
+        "username": "ilikesharks3",
+        "password": "secret",
+        "role": "user"
+    },
+    "actuallegitimateuser": {
+        "username": "actuallegitimateuser",
+        "password": "test1234",
+        "role": "user"
+    },
+    "qwerty12345": {
+        "username": "qwerty12345",
+        "password": "qwerty",
+        "role": "user"
+    },
+    "same_username_for_everything": {
+        "username": "same_username_for_everything",
+        "password": "same_password_for_everything",
+        "role": "user"
+    },
+    "funnyguy": {
+        "username": "funnyguy",
+        "password": "password!",
+        "role": "user"
+    },
+    "notanadmin": {
+        "username": "notanadmin",
+        "password": "ItWouldBeReallyStupidToStorePasswordsAsPlaintext",
+        "role": "admin"
+    },
+    "BestGamerWorldWideOnGod": {
+        "username": "BestGamerWorldWideOnGod",
+        "password": "GodTitanMegaHugeInsaneWarlockMageGolemKingPrinceGamer!!11!!!!!!!!!11",
+        "role": "user"
+    },
+    "JamesCordonDrowningInPureRaspberryJam":{
+        "username": "JamesCordonDrowningInPureRaspberryJam",
+        "password": "jamescordon2012",
+        "role": "user"
+    }
+}
