@@ -162,6 +162,13 @@ app.get('/flag', (req, res) => {
   }
   res.send('no');
 });
+app.get('/decrypt', (req, res) => {
+  res.sendFile(__dirname + '/decrypt/decrypt.html');
+});
+app.get('/decrypt.js', (req, res) => {
+  res.sendFile(__dirname + '/decrypt.js');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
