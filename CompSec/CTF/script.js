@@ -97,7 +97,8 @@ if (window.location.pathname == "/client/") {
             cash.id = 'cash';
             cash.className = 'centertext';
             cash.innerText = 'You have given us ' + money + ' dollars';
-            document.body.appendChild(cash);
+            let cashContainer = document.getElementById('cashContainer');
+            cashContainer.appendChild(cash);
         }
     }
     xhr.send();
@@ -105,4 +106,51 @@ if (window.location.pathname == "/client/") {
         money += 100;
         cash.innerText = 'You have given us ' + money + ' dollars';
     }
+}
+//USERFILES
+if (window.location.pathname == "/userfiles") {
+    let fileList = document.getElementById('fileList');
+    let files = document.getElementById('files');
+    files.style.display = 'block';
+    xhr = new XMLHttpRequest();
+    xhr.open('GET', '/userfiles/files?auth=' + auth, true);
+    xhr.onload = () => {
+        let files = JSON.parse(xhr.responseText);
+        for (let file of files) {
+            if (!['style.css', 'script.js', 'index.html'].includes(file)) {
+                let a = document.createElement('a');
+                a.textContent = '/' + file;
+                a.href = '/userfiles/files/' + file + '?auth=' + auth;
+                fileList.appendChild(a);
+            }
+        }
+    }
+    xhr.send();
+}
+//RULES
+if (window.location.pathname == "/rules") {
+    document.getElementById('submit').addEventListener('click', () => {
+        let flag = document.getElementById('flag').value;
+        let bonus = document.getElementById('bonus').value;
+        xhr = new XMLHttpRequest();
+        xhr.open('POST', '/rules/submit', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({flag, bonus}));
+        xhr.onload = () => {
+            console.log(xhr.responseText);
+            let result = JSON.parse(xhr.responseText);
+            if(result.flag){
+                document.getElementById('result').innerText = 'Flag Correct!';   
+            } else {
+                document.getElementById('result').innerText = 'Flag Incorrect';
+            }   
+            if(result.bonus == 'none'){
+                document.getElementById('bonusresult').innerText = ''
+            } else if(result.bonus){
+                document.getElementById('bonusresult').innerText = 'Bonus Correct!';
+            } else {
+                document.getElementById('bonusresult').innerText = 'Bonus Incorrect';
+            }
+        }
+    });
 }
