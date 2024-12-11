@@ -168,7 +168,6 @@ app.get('/decrypt', (req, res) => {
 app.get('/decrypt.js', (req, res) => {
   res.sendFile(__dirname + '/decrypt.js');
 });
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
