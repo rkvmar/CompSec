@@ -128,6 +128,96 @@ if (window.location.pathname == "/userfiles") {
     xhr.send();
 }
 //RULES
+function doConfetti() {
+    const count = 200,
+    defaults = {
+      origin: { y: 0.7 },
+    };
+  
+  function fire(particleRatio, opts) {
+    confetti(
+      Object.assign({}, defaults, opts, {
+        particleCount: Math.floor(count * particleRatio),
+      })
+    );
+  }
+  
+  fire(0.25, {
+    spread: 26,
+    startVelocity: 55,
+  });
+  
+  fire(0.2, {
+    spread: 60,
+  });
+  
+  fire(0.35, {
+    spread: 100,
+    decay: 0.91,
+    scalar: 0.8,
+  });
+  
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 25,
+    decay: 0.92,
+    scalar: 1.2,
+  });
+  
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 45,
+  });
+}
+function fishConfetti() {
+    const count = 200,
+    defaults = {
+      origin: { y: 0.7 },
+      shapes: ["emoji"],
+      shapeOptions: {
+        emoji: {
+          value: ["🐟", "🐠"],
+        },
+      },
+    };
+  
+  function fire(particleRatio, opts) {
+    confetti(
+      Object.assign({}, defaults, opts, {
+        particleCount: Math.floor(count * particleRatio),
+      })
+    );
+  }
+  
+  fire(0.25, {
+    spread: 26,
+    startVelocity: 55,
+  });
+  
+  fire(0.2, {
+    spread: 60,
+  });
+  
+  fire(0.35, {
+    spread: 100,
+    decay: 0.91,
+    scalar: 0.8,
+  });
+  
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 25,
+    decay: 0.92,
+    scalar: 1.2,
+  });
+  
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 45,
+  });
+}
+
+
 if (window.location.pathname == "/rules") {
     document.getElementById('submit').addEventListener('click', () => {
         let flag = document.getElementById('flag').value;
@@ -140,7 +230,8 @@ if (window.location.pathname == "/rules") {
             console.log(xhr.responseText);
             let result = JSON.parse(xhr.responseText);
             if(result.flag){
-                document.getElementById('result').innerText = 'Flag Correct!';   
+                document.getElementById('result').innerText = 'Flag Correct!';  
+                doConfetti();
             } else {
                 document.getElementById('result').innerText = 'Flag Incorrect';
             }   
@@ -148,6 +239,7 @@ if (window.location.pathname == "/rules") {
                 document.getElementById('bonusresult').innerText = ''
             } else if(result.bonus){
                 document.getElementById('bonusresult').innerText = 'Bonus Correct!';
+                fishConfetti();
             } else {
                 document.getElementById('bonusresult').innerText = 'Bonus Incorrect';
             }
