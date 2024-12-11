@@ -129,7 +129,7 @@ if (window.location.pathname == "/userfiles") {
 }
 //RULES
 function doConfetti() {
-    const count = 200,
+    const count = 400,
     defaults = {
       origin: { y: 0.7 },
     };
@@ -170,7 +170,7 @@ function doConfetti() {
   });
 }
 function fishConfetti() {
-    const count = 200,
+    const count = 400,
     defaults = {
       origin: { y: 0.7 },
       shapes: ["emoji"],
@@ -179,6 +179,7 @@ function fishConfetti() {
           value: ["🐟", "🐠"],
         },
       },
+      scalar: 2.2,
     };
   
   function fire(particleRatio, opts) {

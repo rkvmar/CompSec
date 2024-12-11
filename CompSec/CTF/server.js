@@ -11,7 +11,7 @@ for (let user in userdata) {
         auth: crypto.randomBytes(16).toString('hex')
     }
 }
-const flag = 'how_to_hack_appel?'
+const flag = 'FLAG{how_to_hack_appel?}'
 const bonus = 'sofihs!'
 // Middleware to set Content Security Policy
 app.use((req, res, next) => {
