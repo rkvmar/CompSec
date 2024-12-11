@@ -54,7 +54,7 @@ app.get('/files/*', (req, res) => {
   const filePath = req.params[0];
   res.sendFile(__dirname + '/files/' + filePath, (err) => {
     if (err) {
-      res.status(err.status).send('404: File not found');
+      res.status(err.status).sendFile(__dirname + '/404.html');
     }
   });
 });
