@@ -149,3 +149,6 @@ input{
     border: 1px solid #ccc;
     text-align: center;
 }
+.smol{
+    font-size: 7px;
+}
